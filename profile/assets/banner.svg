@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="OpenVPS">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070b14"/>
+      <stop offset="1" stop-color="#111c3a"/>
+    </linearGradient>
+    <linearGradient id="acc" gradientUnits="userSpaceOnUse" x1="360" y1="0" x2="760" y2="0">
+      <stop offset="0" stop-color="#00d4ff"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00d4ff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#00d4ff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#1e3a5f" stroke-width="1" stroke-opacity="0.45"/>
+      <animateTransform attributeName="patternTransform" type="translate" from="0 0" to="40 40" dur="6s" repeatCount="indefinite"/>
+    </pattern>
+    <clipPath id="round"><rect width="1200" height="300" rx="20"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="300" fill="url(#bg)"/>
+    <rect width="1200" height="300" fill="url(#grid)"/>
+
+    <!-- floating glows -->
+    <circle cx="200" cy="150" r="170" fill="url(#glowA)">
+      <animate attributeName="cx" values="200;260;200" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1000" cy="120" r="200" fill="url(#glowB)">
+      <animate attributeName="cx" values="1000;940;1000" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- rack icon -->
+    <g transform="translate(0,0)">
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="4s" repeatCount="indefinite"/>
+      <rect x="170" y="70" width="140" height="48" rx="9" fill="#0b1324" stroke="#00d4ff" stroke-opacity="0.8" stroke-width="2"/>
+      <rect x="170" y="124" width="140" height="48" rx="9" fill="#0b1324" stroke="#00d4ff" stroke-opacity="0.8" stroke-width="2"/>
+      <rect x="170" y="178" width="140" height="48" rx="9" fill="#0b1324" stroke="#8b5cf6" stroke-opacity="0.9" stroke-width="2"/>
+
+      <circle cx="192" cy="94" r="5" fill="#22c55e"><animate attributeName="opacity" values="1;0.15;1" dur="1.4s" repeatCount="indefinite"/></circle>
+      <circle cx="210" cy="94" r="5" fill="#00d4ff"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.1s" repeatCount="indefinite"/></circle>
+      <circle cx="192" cy="148" r="5" fill="#22c55e"><animate attributeName="opacity" values="1;0.15;1" dur="1.9s" repeatCount="indefinite"/></circle>
+      <circle cx="210" cy="148" r="5" fill="#facc15"><animate attributeName="opacity" values="0.2;1;0.2" dur="1.6s" repeatCount="indefinite"/></circle>
+      <circle cx="192" cy="202" r="5" fill="#22c55e"><animate attributeName="opacity" values="1;0.15;1" dur="1.2s" repeatCount="indefinite"/></circle>
+      <circle cx="210" cy="202" r="5" fill="#8b5cf6"><animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/></circle>
+
+      <g stroke="#334e75" stroke-width="3" stroke-linecap="round">
+        <line x1="240" y1="94" x2="292" y2="94"/>
+        <line x1="240" y1="148" x2="292" y2="148"/>
+        <line x1="240" y1="202" x2="292" y2="202"/>
+      </g>
+    </g>
+
+    <!-- title -->
+    <text x="360" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="78" font-weight="800" fill="#ffffff" opacity="0">
+      Open<tspan fill="url(#acc)">VPS</tspan>
+      <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.2s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="-30 0" to="0 0" dur="1s" begin="0.2s" fill="freeze"/>
+    </text>
+
+    <text x="362" y="195" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="23" fill="#94a3b8" opacity="0">
+      Fully isolated servers · NVMe storage · Smart control panel
+      <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze"/>
+    </text>
+
+    <text x="362" y="236" font-family="Tahoma, 'Segoe UI', Arial, sans-serif" font-size="25" fill="#cbd5e1" opacity="0">
+      خوادم معزولة بالكامل · تخزين NVMe · لوحة تحكم ذكية
+      <animate attributeName="opacity" from="0" to="1" dur="1s" begin="1.3s" fill="freeze"/>
+    </text>
+
+    <!-- sweeping light line -->
+    <rect x="-400" y="292" width="400" height="4" fill="url(#sweep)">
+      <animate attributeName="x" from="-400" to="1200" dur="3.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="1200" height="300" rx="20" fill="none" stroke="#00d4ff" stroke-opacity="0.25" stroke-width="2"/>
+  </g>
+</svg>
